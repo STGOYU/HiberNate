@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name="emp_name")
@@ -15,7 +14,8 @@ public class Employee {
 
     @Column(name="emp_salary")
     private double salary;
-    @OneToOne(mappedBy = "employee")
+    @OneToOne
+     @JoinColumn(name = "emp_id")
     private Address address;
 
     public long getId() {
