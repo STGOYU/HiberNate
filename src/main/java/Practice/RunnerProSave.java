@@ -14,12 +14,15 @@ public class RunnerProSave {
         address1.setAddressLine1("School Street");
         address1.setZipcode("92320");
         address1.setCity("Stuttgart");
+        address1.setEmployee(address1.getEmployee());
 
         Address address2 = new Address();
         address2.setId(102);
         address2.setAddressLine1("Martin Street");
         address2.setZipcode("72320");
         address2.setCity("Stuttgart");
+        address2.setEmployee(address2.getEmployee());
+
 
 
         Employee employee1 = new Employee();
