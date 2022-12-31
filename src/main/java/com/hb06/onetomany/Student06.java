@@ -1,4 +1,4 @@
-package com.hb03.uni_onetoone.uni_onetomany;
+package com.hb06.onetomany;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Student06 {
     @JoinColumn
     private List<Book06> bookList = new ArrayList<>();
 
-        //Getter-Setter
+    //Getter-Setter
 
     public int getId() {
         return id;
@@ -53,7 +53,7 @@ public class Student06 {
         this.bookList = bookList;
     }
 
-        // toString()
+    // toString()
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package com.hb06.uni_onetomany;
+package com.hb06.onetomany;
 
 import com.hb05.manytoone.Student05;
 import com.hb05.manytoone.University;

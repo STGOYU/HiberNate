@@ -1,4 +1,4 @@
-package com.hb06.uni_onetomany;
+package com.hb06.onetomany;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

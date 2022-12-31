@@ -1,10 +1,7 @@
 package com.hb07.bi_onetomany;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +16,7 @@ public class Student07 {
 
     private int grade;
 
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student", orphanRemoval = true,cascade = CascadeType.REMOVE)
     private List<Book07> booklist = new ArrayList<>();
 
     public int getId() {

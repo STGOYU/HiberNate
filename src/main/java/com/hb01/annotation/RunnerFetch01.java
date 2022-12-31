@@ -76,10 +76,10 @@ public class RunnerFetch01 {
         // createQuery metoduna tek parametre girdiğimiz için Student01 clası ile mappleme işlemi yapılmadı
         // bu yüzden Object olarak aldık
 
-       List<Object []> resultlist3 = session.createQuery(hqlQuery4).getResultList();
-        for (Object[] object: resultlist3) {
-            System.out.println(Arrays.toString(object));
-        }
+//       List<Object []> resultlist3 = session.createQuery(hqlQuery4).getResultList();
+//        for (Object[] object: resultlist3) {
+//            System.out.println(Arrays.toString(object));
+//        }
 
         tx.commit();
 

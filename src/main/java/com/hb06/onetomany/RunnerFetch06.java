@@ -1,4 +1,4 @@
-package com.hb03.uni_onetoone.uni_onetomany;
+package com.hb06.onetomany;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,10 +12,6 @@ public class RunnerFetch06 {
 
     public static void main(String[] args) {
 
-
-
-
-
         Configuration con = new Configuration().configure("hibernate.cfg.xml").
                 addAnnotatedClass(Student06.class).addAnnotatedClass(Book06.class);
 
@@ -28,19 +24,20 @@ public class RunnerFetch06 {
 //        System.out.println(student);
 
         // !!! HQL ile id si 101 olan kitabı getirelim
-        String hqlQuery1 = "FROM Book06 b WHERE b.id=101";
-        Book06 book1 = session.createQuery(hqlQuery1, Book06.class).uniqueResult();
-        System.out.println(book1);
+//        String hqlQuery1 = "FROM Book06 b WHERE b.id=101";
+//        Book06 book1 = session.createQuery(hqlQuery1, Book06.class).uniqueResult();
+//        System.out.println(book1);
 
-        // !!! HQL bir öğrencinin kitaplarını öğrenci id si 1001 göre getirme
+        // !!! HQL bir öğrencinin kitaplarını öğrenci id ye göre getirme
         String hqlQuery2=
-                "SELECT b.id, b.name FROM Student06 s INNER JOIN s.bookList b WHERE s.id=1001"; //kitaplarin isim ve id si select oldu
+                "SELECT b.id, b.name FROM Student06 s INNER JOIN s.bookList b WHERE s.id=1001";
         List<Object[]> resultList1= session.createQuery(hqlQuery2).getResultList();
         resultList1.forEach(oa-> System.out.println(Arrays.toString(oa)));
 
         // !!! get() ile bir öğrencinin kitaplarını öğrenci id ye göre getirme
 //        Student06 student = session.get(Student06.class,1001);
 //        System.out.println(student.getBookList());
+
 
         tx.commit();
         session.close();
