@@ -22,7 +22,7 @@ public class RunnerProFetch {
         System.out.println();
         System.out.println(address);
         System.out.println();
-        System.out.println(address.getEmployee());
+
 
 
         tx.commit();

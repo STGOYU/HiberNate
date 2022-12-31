@@ -33,17 +33,10 @@ public class RunnerProSave {
 
 
         Employee employee2 = new Employee();
-        employee2.setId(1002);
-        employee2.setName("Veli Can");
-        employee2.setSalary(90);
-        employee2.setAddress(address1);
-
-
-        Employee employee3 = new Employee();
-        employee3.setId(1003);
-        employee3.setName("Mehmet");
-        employee3.setSalary(70);
-        employee3.setAddress(address2);
+        employee2.setId(1003);
+        employee2.setName("Mehmet");
+        employee2.setSalary(70);
+        employee2.setAddress(address2);
 
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).addAnnotatedClass(Address.class);
@@ -57,7 +50,6 @@ public class RunnerProSave {
         session.save(address2);
         session.save(employee1);
         session.save(employee2);
-        session.save(employee3);
 
 
         tx.commit();

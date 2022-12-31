@@ -1,7 +1,5 @@
 package com.hb05.manytoone;
 
-import com.hb04.bi_onetoone.Diary04;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -23,7 +21,7 @@ public class Student05 {
     private University university;
 
 
-    @PrePersist // create tarini persist(kalici) edildigi zaman calisir
+    @PrePersist // create tarihini persist(kalici) edildigi zaman calisir
     public void prePersist(){
         createon=LocalDateTime.now();
     }

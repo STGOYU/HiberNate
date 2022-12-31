@@ -19,8 +19,7 @@ public class Address {
     @Column(name="city")
     private String city;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(mappedBy = "address")
     private Employee employee;
 
     public long getId() {
@@ -61,5 +60,15 @@ public class Address {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", addressLine1='" + addressLine1 + '\'' +
+                ", zipcode='" + zipcode + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

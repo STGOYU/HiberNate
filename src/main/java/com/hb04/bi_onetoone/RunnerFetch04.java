@@ -26,12 +26,12 @@ public class RunnerFetch04 {
 //        System.out.println(student);
 //        System.out.println("************************");
 //        System.out.println(diary);
-//        System.out.println("*****************");
+//        System.out.println("*************************");
 //        System.out.println(diary.getStudent());
 //        System.out.println("***************************");
 //        System.out.println(student.getDiary());
 
-        // !!! Kesişim kümesini getirelim ( Inner Join )*************************
+        // !!! Kesişim kümesini getirelim ( Inner Join )*************************id leri esit olanlar,foreign olanlar
 //        String hqlQuery ="SELECT s.name,d.name FROM Student04 s INNER JOIN FETCH Diary04 d on s.id=d.student";
 //        // üstteki HQL kodun SQL hali : select s.std_name,d.name from student04 s inner join diary04 d on s.id=d.std_id ;
 //        List<Object[]>  resultList = session.createQuery(hqlQuery).getResultList();
@@ -43,7 +43,7 @@ public class RunnerFetch04 {
 //        });
 
         // !!! HQL LEFT JOIN *************************************
-        // Kısaca bütün öğrenciler ve kitabı olan öğrencileri istiyorum
+        // Kısaca bütün öğrenciler ve kitabı olan öğrencileri istiyorum,
 //        String hqlQuery2 =
 //                "SELECT s.name,d.name FROM Student04 s LEFT JOIN FETCH Diary04 d on s.id= d.student";
 //        List<Object[]> resultList2 = session.createQuery(hqlQuery2).getResultList();
@@ -52,22 +52,22 @@ public class RunnerFetch04 {
 //        });
 
         // !!! HQL RIGHT JOIN******************************************
-        // kısaca : Bütün günlükler ve günlüğü olan öğrenciler
-        String hqlQuery3 =
-                "SELECT s.name,d.name FROM Student04 s RIGHT JOIN FETCH Diary04 d on s.id=d.student";
-        List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
-        resultList3.forEach(oa->{
-            System.out.println(Arrays.toString(oa));
-        });
+        // kısaca : Bütün günlükler ve günlüğü olan öğrenciler ,gunluklerin ayrintilarina ihtiyac olabilir
+//        String hqlQuery3 =
+//                "SELECT s.name,d.name FROM Student04 s RIGHT JOIN FETCH Diary04 d on s.id=d.student";
+//        List<Object[]> resultList3 = session.createQuery(hqlQuery3).getResultList();
+//        resultList3.forEach(oa->{
+//            System.out.println(Arrays.toString(oa));
+//        });
 
         // !!! HQL FULL JOIN**********************************************
             // Kısaca : bütün student ve diary bilgileri getir
-//        String hqlQuery4 =
-//                "SELECT s.name,d.name FROM Student04 s FULL JOIN FETCH Diary04 d on s.id=d.student.id";
-//        List<Object[]> resultList4 = session.createQuery(hqlQuery4).getResultList();
-//        resultList4.forEach(oa->{
-//            System.out.println(Arrays.toString(oa));
-//        });
+        String hqlQuery4 =
+                "SELECT s.name,d.name FROM Student04 s FULL JOIN FETCH Diary04 d on s.id=d.student.id";
+        List<Object[]> resultList4 = session.createQuery(hqlQuery4).getResultList();
+        resultList4.forEach(oa->{
+            System.out.println(Arrays.toString(oa));
+        });
 
 
 
