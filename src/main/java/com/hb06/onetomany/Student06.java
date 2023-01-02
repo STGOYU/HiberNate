@@ -17,7 +17,7 @@ public class Student06 {
 
     @OneToMany
     @JoinColumn
-    private List<Book06> bookList = new ArrayList<>();
+    private List<Book06> bookList = new ArrayList<>();  //ogrenciden kitaplara-->
 
     //Getter-Setter
 
