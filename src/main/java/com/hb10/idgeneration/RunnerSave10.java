@@ -10,9 +10,13 @@ public class RunnerSave10 {
 
     public static void main(String[] args) {
 
-        Student10 student = new Student10();
-        student.setName("Alper K");
-        student.setGrade(100);
+        Student10 student1 = new Student10();
+        student1.setName("Alper K");
+        student1.setGrade(100);
+
+        Student10 student2 = new Student10();
+        student2.setName("Yunus C");
+        student2.setGrade(101);
 
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml").
@@ -23,7 +27,8 @@ public class RunnerSave10 {
         Transaction tx = session.beginTransaction();
 
 
-        session.save(student);
+        session.save(student1);
+        session.save(student2);
 
 
 

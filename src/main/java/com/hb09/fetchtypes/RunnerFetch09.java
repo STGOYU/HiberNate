@@ -29,13 +29,15 @@ public class RunnerFetch09 {
                                         //Book09{id=104, name='D Book'}
         }
 
+
+
         /*
         Eager yapida calisrken asaigdaki sorguda hata almiyorken FetchType Lazy olsaydi exception alacaktik
          */
         tx.commit();
         session.close();
 //        for (Book09 book: student.getBookList()) {
-//            System.out.println(book);
+//            System.out.println(book);           //LazyInitializationException
 //        }
         sf.close();
 

@@ -1,0 +1,57 @@
+package com.hb12.caching;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class RunnerFetch12 {
+
+
+    public static void main(String[] args) {
+
+
+        Configuration con = new Configuration().configure("hibernate.cfg.xml").
+                addAnnotatedClass(Student12.class);
+
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession();
+        Transaction tx = session.beginTransaction();
+
+        // 1 )
+        System.out.println("İlk get işlemi 1 id li öğrenci için : ");
+        Student12 student1 = session.get(Student12.class,1L);
+
+        //session.clear(); // cache içini sıfırladık
+
+//        System.out.println("İkinci get işlemi 1 id li öğrenci için : ");
+//        Student12 student2 = session.get(Student12.class,1L);
+
+
+
+        tx.commit();
+        session.close();
+        // first level cache mekanizmasında alt satırdaki kodlar için yeni bir query oluşturulur
+        Session session2 = sf.openSession();
+        Transaction tx2 = session2.beginTransaction();
+        System.out.println("session close sonrası get işlemi 1 id li öğrenci için : ");
+        Student12 student3 = session2.get(Student12.class,1L);
+
+        //Second level icin studente iki annotation(Cache) ve xml e iki link ekledi ..
+        //second i kapatmak icin xml de eklenenlere false yap
+
+        tx2.commit();
+        session2.close();
+        sf.close();
+
+
+
+
+
+
+
+
+
+
+    }
+}
