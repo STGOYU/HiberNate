@@ -53,7 +53,7 @@ public class RunnerSave09 {
         student2.getBookList().add(book4);
 
         student3.getBookList().add(book5);
-
+            //ogrencilere kitap , kitaplara ogrenci veriyor
         book1.setStudent(student1);
         book2.setStudent(student1);
 

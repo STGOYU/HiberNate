@@ -1,30 +1,29 @@
-package com.hb10.idgeneration;
+package com.hb13.get_load;
 
+import com.hb12.caching.Student12;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class RunnerSave10 {
-
+public class RunnerSave13 {
 
     public static void main(String[] args) {
 
-        Student10 student1 = new Student10();
-        student1.setName("Alper K");
-        student1.setGrade(100);
+        Student13 student1 = new Student13();
+        student1.setName("Mustafa KESER");
+        student1.setMathGrade(35);
 
-        Student10 student2 = new Student10();
-        student2.setName("Yunus C");
-        student2.setGrade(101);
+        Student13 student2 = new Student13();
+        student2.setName("Yusuf Sefa");
+        student2.setMathGrade(30);
 
-        Student10 student3 = new Student10();
-        student3.setName("Ali O");
-        student3.setGrade(102);
-
+        Student13 student3 = new Student13();
+        student3.setName("Halide K");
+        student3.setMathGrade(40);
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml").
-                addAnnotatedClass(Student10.class);
+                addAnnotatedClass(Student13.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
@@ -37,15 +36,10 @@ public class RunnerSave10 {
 
 
 
+
+
         tx.commit();
         session.close();
         sf.close();
-
-
-
-
-
-
-
     }
 }

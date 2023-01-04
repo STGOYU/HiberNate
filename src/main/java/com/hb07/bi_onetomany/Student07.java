@@ -15,7 +15,7 @@ public class Student07 {
 
     private int grade;
 
-    @OneToMany(mappedBy = "student", orphanRemoval = true,cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "student",orphanRemoval = true,cascade = CascadeType.REMOVE)
     private List<Book07> booklist = new ArrayList<>();
 
     public int getId() {

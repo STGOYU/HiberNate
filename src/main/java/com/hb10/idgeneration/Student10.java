@@ -7,7 +7,7 @@ public class Student10 {
 
     /*
     Oracle DB - PostgreSQL ---> Sequence ---> hangi id ile baslayacagini vs. ayarlar kontrol dev'de
-    MySQL - MicrosoftSQL  --> IDENTITY -----> bi yerden baslayip siralar kendi yapisina goredir en basittidir
+    MySQL - MicrosoftSQL  --> IDENTITY -----> birden baslayip siralar kendi yapisina goredir en basittidir
 
     GenerationType.AUTO  ---> Hibernate otomatik olarak strateji belirler
     GenerationType.TABLE ---> En yavasi ...cok kullanilmiyor,id uretmek icin ekstra tablo yapar

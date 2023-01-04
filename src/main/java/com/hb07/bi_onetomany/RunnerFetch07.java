@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 public class RunnerFetch07 {
 
     public static void main(String[] args) {
@@ -61,24 +63,26 @@ public class RunnerFetch07 {
 
         // Kitab bilgisi olan bir Öğrenciyi silmek istersek bunu 2 yolu var :
         // 1) önce Book tablosundan ilişkili olduğu Book lar silinir daha sonra
-        // istenen student objesi silinebilir
+        // istenen student objesi silinebilir //booklar child
+
         //2) Student entity clasının ilgili yerine Cascade / orphanRemoval
 
         //
         // !!! 1001 id li student objemi delete metoduyla silelim
 //       Student07 student = session.get(Student07.class,1001);
-//       session.delete(student);
+//       session.delete(student);  //  ogrenci kitaplari ile birlikte silindi.
 
         //student.getBookList().set(0,null); // orphanRemovel=true , 0.indexdeki child ı Child
         // tablosundan gider siler, orphan true olursa null olanlarida siler
+        //orhanremove,remove ise parenti silersen child da siler.. birini yazmak yeterlidir
 
         // !!! book ismi içinde "Java" geçen student kayıtlarını alalım ( HQL )
-//        String hqlQuery4 =
-//                "SELECT s FROM Student07 s JOIN s.bookList b WHERE b.name LIKE '%Java%'";
-//        List<Student07> resulList1 = session.createQuery(hqlQuery4, Student07.class).getResultList();
-//        for (Student07 student07: resulList1) {
-//            System.out.println(student07);
-//        }
+        String hqlQuery4 =
+                "SELECT s FROM Student07 s JOIN s.bookList b WHERE b.name LIKE '%Java%'";
+        List<Student07> resulList1 = session.createQuery(hqlQuery4, Student07.class).getResultList();
+        for (Student07 student07: resulList1) {
+            System.out.println(student07);
+        }
 
         tx.commit();
         session.close();

@@ -7,7 +7,6 @@ import org.hibernate.cfg.Configuration;
 
 public class RunnerFetch12 {
 
-
     public static void main(String[] args) {
 
 
@@ -37,19 +36,9 @@ public class RunnerFetch12 {
         System.out.println("session close sonrası get işlemi 1 id li öğrenci için : ");
         Student12 student3 = session2.get(Student12.class,1L);
 
-        //Second level icin studente iki annotation(Cache) ve xml e iki link ekledi ..
-        //second i kapatmak icin xml de eklenenlere false yap
-
         tx2.commit();
         session2.close();
         sf.close();
-
-
-
-
-
-
-
 
 
 
