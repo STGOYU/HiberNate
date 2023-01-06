@@ -117,9 +117,6 @@ public class RunnerSave11 {
         resultList6.forEach(System.out::println);
 
 
-
-
-
         tx.commit();
         session.close();
         sf.close();

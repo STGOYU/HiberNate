@@ -35,11 +35,12 @@ public class RunnerFetch13 {
         Student id : 1
         Student get name : Mustafa KESER //get den dolayi ikinciside geldi
          */
-        //aynisini load icin yazalim hib bir sey yazmadi. bu method proxyden calisiyor db de kullanilmayacak data icin kullanilir
-//        Student13 student2 = session.load(Student13.class,2L);
+        //aynisini load icin yazalim hic bir sey yazmadi. bu method proxyden calisiyor db de kullanilmayacak data icin kullanilir
+//        Student13 student2 = session.load(Student13.class,3L);
 //        System.out.println("student2.getName() = " + student2.getName());
 //        System.out.println();
-
+//        System.out.println("student2.getMathGrade() = " + student2.getMathGrade());
+//
         //DB de olmayan id yi cagirisak?
 //        System.out.println("get() basladi : ");
 //       Student13 student3 = session.get(Student13.class,5L);
@@ -51,21 +52,21 @@ public class RunnerFetch13 {
 //        }
         System.out.println("****************************************************");
         //Load methodu basladi //oldugundan emin degilsek get yapilmali
-//       Student13 student4 = session.load(Student13.class,10L);
+//       Student13 student4 = session.load(Student13.class,10L); //student4.getId() = 10
 //       if(student4 !=null){
 //           System.out.println("student4.getId() = " + student4.getId());//ObjectNotFoundException
 //           System.out.println("student4.getName() = " + student4.getName());//ObjectNotFoundException
 //       }
 
         //Load () methodu kullanimi :
-       Student13 student5 = session.get(Student13.class,1L);
-       session.delete(student5);
-
-       Student13 student6 = session.load(Student13.class,2L);
-       session.delete(student6);
+//       Student13 student5 = session.get(Student13.class,1L);
+//       session.delete(student5);
+//
+//       Student13 student6 = session.load(Student13.class,2L);
+//       session.delete(student6);
 
        //load methodu ile obje referansi alinir ve sonra delete cagrilir.
-        //get methodu cagrilmayarak db ye hit engellenmis olur.
+       //onemli  //get methodu cagrilmayarak db ye hit engellenmis olur.
 
 
 
